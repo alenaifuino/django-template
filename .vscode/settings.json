@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/opt/app-root/bin/python",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django",
+        "--django-settings-module",
+        "webapp.settings",
+    ],
+}
