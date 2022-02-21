@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  web:
+    image: webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    volumes:
+      - ..:/app
+      # Use Docker from inside the container
+      # See https://aka.ms/vscode-remote/samples/docker-from-docker-compose for details
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=webapp.settings.local
+    command: python3 manage.py runserver_plus --cert-file .certs/cert.crt 0.0.0.0:8000
+
+  livereload:
+    image: webapp
+    volumes:
+      - ..:/app
+    ports:
+      - "35729:35729"
+    environment:
+      - DJANGO_SETTINGS_MODULE=webapp.settings.local
+    command: python3 manage.py livereload --host=livereload
+    depends_on:
+      - web
+
+    # selenium:
+    #   image: selenium/standalone-chrome:3.141.0
+    #   ports:
+    #     - "4444:4444"
+    #   volumes:
+    #     - .:/app

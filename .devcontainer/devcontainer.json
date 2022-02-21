@@ -1,0 +1,58 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/docker-existing-docker-compose
+{
+    "name": "Local Docker Compose",
+
+    "dockerComposeFile": ["docker-compose.yml"],
+
+    // The 'service' property is the name of the service for the container that VS Code should
+	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+    "service": "web",
+
+    // The optional 'workspaceFolder' property is the path VS Code should open by default when
+	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
+    "workspaceFolder": "/app",
+
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "python.pythonPath": "/opt/app-root/bin/python",
+        "python.languageServer": "Pylance",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.autopep8Path": "/opt/app-root/bin/autopep8",
+        "python.formatting.blackPath": "/opt/app-root/bin/black",
+        "python.formatting.yapfPath": "/opt/app-root/bin/yapf",
+        "python.linting.banditPath": "/opt/app-root/bin/bandit",
+        "python.linting.flake8Path": "/opt/app-root/bin/flake8",
+        "python.linting.mypyPath": "/opt/app-root/bin/mypy",
+        "python.linting.pycodestylePath": "/opt/app-root/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/opt/app-root/bin/pydocstyle",
+        "python.linting.pylintPath": "/opt/app-root/bin/pylint"
+    },
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "visualstudioexptteam.vscodeintellicode",
+        "nhoizey.gremlins",
+        "olback.es6-css-minify",
+        "hookyqr.beautify",
+    ],
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [8000],
+
+    // Uncomment the next line to run commands after the container is created - for example installing curl.
+    // "postCreateCommand": "apt-get update && apt-get install -y curl",
+
+    // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+    // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+    // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+    // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+
+    // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "default"
+}
