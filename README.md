@@ -25,7 +25,7 @@ Apart from the regular files created by Django (`webapp/*`, `manage.py`), this r
 └── docker-compose.yml       - Docker compose file
 └── Dockerfile               - Docker configuration file for development
 ├── requirements.dev.txt     - List of development dependencies
-.html-template/           - Folder to store an HTMl template
+.html-template/           - Folder to store an HTMl template for development purposes
 .vscode/                  - Visual Studio Code configuration files
 .static/                  - Static files folder: css, js, and images
 .env                      - Environment variables file
