@@ -52,7 +52,7 @@ This is a minimal Django 3.2 project. To run this project in your development ma
 1. Clone the starter template
 
 ```
-$ git clone https://github.com/alenaifuino/flask-template.git <webapp_name>
+$ git clone https://github.com/alenaifuino/django-template.git <webapp_name>
 ```
 
 2. Run Visual Studio Code inside the directory where you cloned the repo
